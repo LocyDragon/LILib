@@ -1,0 +1,5 @@
+name: LILib
+main: com.locydragon.lil.Main
+version: 1.0.0
+author: LocyDragon
+depend: [LocyItem]
