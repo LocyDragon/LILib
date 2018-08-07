@@ -115,5 +115,12 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.49</version>
         </dependency>
+        <dependency>
+            <groupId>LocyItem</groupId>
+            <artifactId>LocyItem</artifactId>
+            <version>2.1.8</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/LocyItem-2.1.8.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>

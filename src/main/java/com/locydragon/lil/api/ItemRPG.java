@@ -21,21 +21,29 @@ public class ItemRPG {
 
 	/**
 	 * 通过物品的显示名称获取ItemRPG对象
+	 * 可能返回null
 	 *
 	 * @param disPlayerName 物品的显示名称
 	 * @return 实例对象
 	 */
 	public static ItemRPG fromDisplayName(String disPlayerName) {
+		if (Control.getByItemName(disPlayerName) == null) {
+			return null;
+		}
 		return new ItemRPG(Control.getByItemName(disPlayerName));
 	}
 
 	/**
 	 * 通过物品的ID来获取ItemRPG实例对象
+	 * 可能返回null
 	 *
 	 * @param id 物品的ID
 	 * @return 实例对象
 	 */
 	public static ItemRPG fromItemID(String id) {
+		if (Control.search(id) == null) {
+			return null;
+		}
 		return new ItemRPG(Control.search(id));
 	}
 
@@ -90,5 +98,14 @@ public class ItemRPG {
 		Main.reloadSettings();
 		this.data = DataSet.deSerialize(Main.instance.getConfig().getString(item.getId(), ""));
 		return this;
+	}
+
+	/**
+	 * 获取数据
+	 *
+	 * @return 数据对象
+	 */
+	public DataSet getData() {
+		return this.data;
 	}
 }
